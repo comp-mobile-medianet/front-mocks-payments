@@ -1,0 +1,359 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# Payments
+JSON contracts between back and front end for payments functionality
+
+# Group Payments list
+
+List of payments
+
+Form parameters:
+<ul>
+    <li>transactionType</li>
+    <li>transactionId</li>
+    <li>pendingSort</li>
+    <li>recentSort</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To payment detail: viewPayment</li>
+</ul>
+
+## List of payments [/pages/payments/list.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": false,
+                "graph": {
+                    "axes": [0, 10, 20, 30, 40],
+                    "dates": [
+                        {
+                            "date": "01 Mar",
+                            "percent": 80,
+                            "amount": 50.00
+                        },
+                        {
+                            "date": "02",
+                            "percent": 0,
+                            "amount": 0
+                        },
+                        {
+                            "date": "03",
+                            "percent": 25,
+                            "amount": 20
+                        }
+                    ]
+                },
+                "sortInfo": {
+                    "criteria": 0,
+                    "ascendant": false
+                },
+                "payments": [
+                    {
+                        "transactionId": "1234",
+                        "status": "PENDING",
+                        "date": 12351141411,
+                        "description": "SPCA of Texas",
+                        "amount": 100
+                    },
+                    {
+                        "transactionId": "9876",
+                        "status": "PENDING",
+                        "date": 12355141411,
+                        "description": "Compass Bank. Eric's Credit Card",
+                        "amount": 1118.34
+                    },
+                    {
+                        "transactionId": "7347626535732",
+                        "status": "PROCESSED",
+                        "date": 12451145411,
+                        "description": "Centerpoint Energy. Forest Path Gas",
+                        "amount": 32
+                    },
+                    {
+                        "transactionId": "868649679354",
+                        "status": "INPROCESS",
+                        "date": 12351111411,
+                        "description": "Chase Card Service. BizCard",
+                        "amount": 3487.79
+                    },
+                    {
+                        "transactionId": "459747835623",
+                        "status": "CANCELLED",
+                        "date": 12351111411,
+                        "description": "City of Conroe. Manor House Water and Trash",
+                        "amount": 256.76
+                    },
+                    {
+                        "transactionId": "34864586422",
+                        "status": "FAILED",
+                        "date": 12351111411,
+                        "description": "SHELL OIL",
+                        "amount": 245.34
+                    }
+                ]
+            }
+        }
+
+## Empty Payments [/pages/payments/list.json?mockId=empty]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": true
+            }
+        }
+
+# Group Payments Detail
+
+Payment detail
+
+Form parameters:
+<ul>
+    <li>transactionId</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To payment extended detail: viewExtendedPayment</li>
+    <li>To payment list: back</li>
+</ul>
+
+## List of payments [/pages/payments/detail.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": false,
+                "activePaymentIndex": "3",
+                "payments": [
+                    {
+                        "transactionId": "34864586422",
+                        "status": "PENDING",
+                        "date": 12351141411,
+                        "effectiveDate": 12351141411,
+                        "description": "SPCA of Texas",
+                        "totalAmount": 100,
+                        "amount": 100,
+                        "feeAmount": 0,
+                        "isDetailAvailable": true,
+                        "paymentMethod": "Electronic",
+                        "confirmationNumber": "CWETQ-QERRW"
+                    },
+                    {
+                        "transactionId": "45676644784",
+                        "status": "PENDING",
+                        "date": 12355141411,
+                        "effectiveDate": 12355141411,
+                        "description": "Compass Bank. Eric's Credit Card",
+                        "totalAmount": 1118.34,
+                        "amount": 1115,
+                        "feeAmount": 3.34,
+                        "isDetailAvailable": true,
+                        "paymentMethod": "Check",
+                        "confirmationNumber": "CWTT2-QWWERR"
+                    },
+                    {
+                        "transactionId": "9887645574",
+                        "status": "PROCESSED",
+                        "date": 12451145411,
+                        "effectiveDate": 12451145411,
+                        "description": "Centerpoint Energy. Forest Path Gas",
+                        "totalAmount": 32,
+                        "amount": 31,
+                        "feeAmount": 1,
+                        "isDetailAvailable": false,
+                        "paymentMethod": "Check",
+                        "confirmationNumber": "TY2Y2-ET2G"
+                    },
+                    {
+                        "transactionId": "9567449744",
+                        "status": "INPROCESS",
+                        "date": 12351111411,
+                        "effectiveDate": 12351111411,
+                        "description": "Chase Card Service. BizCard",
+                        "totalAmount": 3487.79,
+                        "amount": 3487.79,
+                        "feeAmount": 1,
+                        "isDetailAvailable": false,
+                        "paymentMethod": "Electronic",
+                        "confirmationNumber": "AHCY2-AD22"
+                    },
+                    {
+                        "transactionId": "8568354874379",
+                        "status": "CANCELLED",
+                        "date": 12351111411,
+                        "effectiveDate": 12351111411,
+                        "description": "City of Conroe. Manor House Water and Trash",
+                        "totalAmount": 256.76,
+                        "amount": 256.76,
+                        "feeAmount": 0,
+                        "isDetailAvailable": true,
+                        "paymentMethod": "Electronic",
+                        "confirmationNumber": "C2T2TY-ADGAS"
+                    },
+                    {
+                        "transactionId": "44836765753567",
+                        "status": "FAILED",
+                        "date": 12351111411,
+                        "effectiveDate": 12351111411,
+                        "description": "SHELL OIL",
+                        "totalAmount": 245.34,
+                        "amount": 240,
+                        "feeAmount": 5.34,
+                        "isDetailAvailable": false,
+                        "paymentMethod": "Electronic",
+                        "confirmationNumber": "CGAY-1H3H33"
+                    }
+                ]
+            },
+            "flowExecutionUrl": "/api/payments/extendedDetail.json?execution=e1s1"
+        }
+
+## Empty Payments [/pages/payments/detail.json?mockId=empty]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": true
+            }
+        }
+
+# Group Payments Extended Detail
+
+Payment extended detail
+
+Form parameters: -
+_eventId: -
+
+## Card payment [/api/payments/extendedDetail.json]
+### Card payment [GET]
+
++ Request (application/json)
+
+        {
+            "transactionId": "35615234143"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "alerts": null,
+            "pageContent": {
+                "cardNumber": "622345366311622",
+                "checkNumber": null,
+                "isAutomaticPayment": true,
+                "payeeAccountNumber": "14621356611",
+                "accountNumber": "6167211424662",
+                "routingNumber": "113010547",
+                "accountType": "DDA",
+                "deliveryDate": 12351111411,
+                "paymentMethod": "Electronic",
+                "category": "Fuel"
+            },
+            "flowExecutionUrl": "/api/payments/extendedDetail.json?execution=e2s2"
+        }
+
+## Check payment [/api/payments/extendedDetail.json?mockId=check]
+### Check payment [GET]
+
++ Request (application/json)
+
+        {
+            "transactionId": "35615234143"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "alerts": null,
+            "pageContent": {
+                "cardNumber": null,
+                "checkNumber": "5225",
+                "isAutomaticPayment": true,
+                "payeeAccountNumber": "14621356611",
+                "accountNumber": "6167211424662",
+                "routingNumber": "113010547",
+                "accountType": "DDA",
+                "deliveryDate": 12351111411,
+                "paymentMethod": "Electronic",
+                "category": "Fuel"
+            }
+        }
+
+
+## Alert [/api/payments/extendedDetail.json?mockId=alert]
+### Alert [GET]
+
++ Request (application/json)
+
+        {
+            "transactionId": "35615234143"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "alerts": [
+                {
+                    "type": "ERROR",
+                    "alert": [
+                        {
+                            "text": "Error message 1",
+                            "field": ""
+                        }
+                    ]
+                }
+            ],
+            "pageContent": null
+        }
+
+## Error [/api/payments/extendedDetail.json?mockId=error]
+### Error [GET]
+
++ Request (application/json)
+
+        {
+            "transactionId": "35615234143"
+        }
+
++ Response 500 (application/json)
+
+        {
+            "alerts": null,
+            "pageContent": {
+                "paymentMemo": "Memo",
+                "cardNumber": null,
+                "checkNumber": "5225",
+                "creditDate": 156134112411,
+                "debitDate": 123511414114,
+                "deliveryDate": 12624623461,
+                "isAutomaticPayment": true,
+                "isPaymentFee": false,
+                "paymentDelivery": null,
+                "paymentNote": "Note",
+                "payeeName": "Chevron",
+                "payeeAccountNumber": "14621356611",
+                "accountNumber": "6167211424662"
+            }
+        }
+

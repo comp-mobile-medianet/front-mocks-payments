@@ -508,3 +508,36 @@ _eventId:
             }
         }
 
+# Group Make Payment Confirmation
+
+Make Payment Confirmation
+
+_eventId:
+<ul>
+    <li>To confirm payment: confirm</li>
+    <li>To edit payment: edit</li>
+    <li>To close: close</li>
+</ul>
+
+## Make Payment Confirmation [/pages/payments/makePaymentConfirmation.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "transactionId": "34864586422",
+                "status": "PENDING",
+                "date": 12351141411,
+                "effectiveDate": 12351141411,
+                "description": "SPCA of Texas",
+                "totalAmount": 100,
+                "amount": 100,
+                "feeAmount": 0,
+                "detailAvailable": true,
+                "paymentMethod": "Electronic",
+                "confirmationNumber": "CWETQ-QERRW"
+            }
+        }

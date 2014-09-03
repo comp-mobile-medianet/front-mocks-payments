@@ -359,3 +359,152 @@ _eventId: -
             }
         }
 
+# Group Manage Pay Accounts
+
+Manage Pay Accounts
+
+Form parameters:
+<ul>
+    <li>selectedAccounts=aaaaaa,bbbbb,ccccc</li>
+    <li>defaultAccount</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To submit: updateAccounts</li>
+    <li>To close: close</li>
+</ul>
+
+## Manage Pay Accounts [/pages/payments/manageAccounts.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": false,
+                "accounts":[
+                    {
+                        "key":"123456789",
+                        "description":"BBVA - Personal Checking",
+                        "accountNickName":"Johnny",
+                        "accountLast4":"5566",
+                        "checked": true,
+                        "accountDefault": false
+                    },
+                    {
+                        "key":"234567891",
+                        "description":"BBVA - Personal Checking",
+                        "accountNickName":"Cuenta BBVA",
+                        "accountLast4": "1561",
+                        "checked": false,
+                        "accountDefault": true
+                    },
+                    {
+                        "key":"1222",
+                        "description":"BBVA - Personal Checking",
+                        "accountNickName":"Cuenta BBVA",
+                        "accountLast4": "1234",
+                        "checked": true,
+                        "accountDefault": false
+                    }
+                ]   
+                
+            }
+        }
+
+# Group Make Payment
+
+Make Payment
+
+Form parameters:
+<ul>
+    <li>accountKey</li>
+    <li>payeeId</li>
+    <li>amount</li>
+    <li>date</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To make Payment: makePayment</li>
+    <li>To close: close</li>
+</ul>
+
+## Make Payment [/pages/payments/makePayment.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": false,
+                "accounts":[
+                    {
+                        "key":"123456789",
+                        "description":"BBVA - Personal Checking",
+                        "accountNickName":"Johnny",
+                        "accountLast4":"5566",
+                        "availableBal": 11000,
+                        "postedBal": 11000
+                    },
+                    {
+                        "key":"234567891",
+                        "description":"BBVA - Personal Checking",
+                        "accountNickName":"Cuenta BBVA",
+                        "accountLast4": "1561",
+                        "availableBal": 1500,
+                        "postedBal": 1500
+                    },
+                    {
+                        "key":"1222",
+                        "description":"BBVA - Personal Checking",
+                        "accountNickName":"Cuenta BBVA",
+                        "accountLast4": "1234",
+                        "availableBal": 6000,
+                        "postedBal": 6000
+                    }
+                ],
+                "to": [
+                    {
+                        "group": "J",
+                        "elements": [
+                            {
+                                "accountLast4": "6133",
+                                "payeeId": "241",
+                                "payeeName": "James Bond",
+                                "payeeNickName": "bond007"
+                            }
+                        ]
+                    },
+                    {
+                        "group": "S",
+                        "elements": [
+                            {
+                                "accountLast4": "5566",
+                                "payeeId": "166259",
+                                "payeeName": "Steve",
+                                "payeeNickName": "Vaugh"
+                            },
+                            {
+                                "accountLast4": "9282",
+                                "payeeId": "156123",
+                                "payeeName": "Steve",
+                                "payeeNickName": "McQueen"
+                            },
+                            {
+                                "accountLast4": "6132",
+                                "payeeId": "223422",
+                                "payeeName": "Steve",
+                                "payeeNickName": "Rogers"
+                            }
+                        ]
+                    }
+                ] 
+            }
+        }
+

@@ -704,7 +704,7 @@ _eventId:
             }
         }
 
-## Payee detail [/pages/payments/payeeDetail.json]
+## Details of company payee [/pages/payments/payeeDetail.json]
 ### Valid [GET]
 + Response 200 (application/json)
 
@@ -715,6 +715,29 @@ _eventId:
             "pageContent": {
                 "id": "1",
                 "nickName": "Comcast",
-                "accountNumber": "8767998767-1"
+                "accountNumber": "8767998767-1",
+                "type": "COMPANY",
+                "address": {
+                    "street": "901 Jones Rd."
+                }
+            }
+        }
+
+## Details of customer payee [/pages/payments/payeeDetail.json?mockId=customer]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "id": "1",
+                "nickName": "Comcast",
+                "phoneNumber": "555-555-555",
+                "type": "CUSTOMER",
+                "address": {
+                    "street": "901 Jones Rd."
+                }
             }
         }

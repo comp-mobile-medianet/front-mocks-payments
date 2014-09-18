@@ -602,7 +602,6 @@ _eventId:
 ### Valid [GET]
 + Response 200 (application/json)
 
-
         {
             "header": {
                 "showMenu": true
@@ -622,5 +621,77 @@ _eventId:
                 "amount": 100,
                 "feeAmount": 0,
                 "paymentMethod": "Electronic"
+            }
+        }
+        
+# Group Manage Pay Accounts
+
+Manage Pay Accounts
+
+Form parameters:
+<ul>
+    <li>selectedAccounts</li>
+    <li>defaultAccount</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To submit: updateAccounts</li>
+    <li>To close: close</li>
+</ul>
+
+## List of Payees [/pages/payments/managePayee.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": [
+                {
+                    "group": "C",
+                    "elements": [
+                        {
+                            "name": "Comcast",
+                            "accountNumber": "8767998767-1"
+                        }
+                    ]
+                },
+                {
+                    "group": "J",
+                    "elements": [
+                        {
+                            "name": "John Doe",
+                            "phoneNumber": "555-555-5555"
+                        },
+                        {
+                            "name": "John Smith",
+                            "phoneNumber": "555-555-5555"
+                        }
+                    ]
+                },
+                {
+                    "group": "R",
+                    "elements": [
+                        {
+                            "name": "Reliant Energy",
+                            "accountNumber": "6799877-1"
+                        }
+                    ]
+                }
+            ]
+        }
+
+## Empty list of Payees [/pages/payments/managePayee.json?mockId=empty]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": true
             }
         }

@@ -654,7 +654,7 @@ _eventId:
                     "elements": [
                         {
                             "id": "1",
-                            "name": "Comcast",
+                            "nickName": "Comcast",
                             "accountNumber": "8767998767-1"
                         }
                     ]
@@ -664,12 +664,12 @@ _eventId:
                     "elements": [
                         {
                             "id": "2",
-                            "name": "John Doe",
+                            "nickName": "John Doe",
                             "phoneNumber": "555-555-5555"
                         },
                         {
                             "id": "3",
-                            "name": "John Smith",
+                            "nickName": "John Smith",
                             "phoneNumber": "555-555-5555"
                         }
                     ]
@@ -679,7 +679,7 @@ _eventId:
                     "elements": [
                         {
                             "id": "4",
-                            "name": "Reliant Energy",
+                            "nickName": "Reliant Energy",
                             "accountNumber": "6799877-1"
                         }
                     ]
@@ -697,5 +697,20 @@ _eventId:
             },
             "pageContent": {
                 "empty": true
+            }
+        }
+
+## Payee detail [/pages/payments/payeeDetail.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "id": "1",
+                "nickName": "Comcast",
+                "accountNumber": "8767998767-1"
             }
         }

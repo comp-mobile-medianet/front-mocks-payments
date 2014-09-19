@@ -730,6 +730,34 @@ _eventId:
             }
         }
 
+# Group Add Payee
+
+Shows the enrollment form
+
+Form parameters:
+<ul>
+   <li>phoneNumber</li>
+   <li>nickname</li>
+   <li>address</li>
+   <li>city</li>
+   <li>zipCode</li>
+   <li>state</li>
+   <li>accountNumber</li>
+   <li>accountNumberConfirm</li>
+</ul>
+
+    
+_eventId: addPayee
+
+## Correct answer [/pages/payments/addPayee.json]
+### Activate [GET]
++ Response 200 (application/json)
+
+        {
+            "alerts": null, 
+            "pageContent": null,
+            "flowExecutionUrl": "/api/payments/searchPayees.json?_eventId=addPayee"
+        }
 
 # Group Search Payees
 
@@ -743,7 +771,7 @@ _eventId:
     <li>To add existant company or person: addPayee</li>
 </ul>
 
-## List of companies [/pages/payments/searchCompany.json]
+## List of companies [/api/payments/searchCompany.json]
 ### Valid [GET]
 + Response 200 (application/json)
 
@@ -756,7 +784,7 @@ _eventId:
             ]
         }
 
-## Empty list of companies [/pages/payments/searchCompany.json?mockId=2]
+## Empty list of companies [/api/payments/searchCompany.json?mockId=2]
 ### Valid [GET]
 + Response 200 (application/json)
 
@@ -767,7 +795,7 @@ _eventId:
             }
         }
 
-## Successful phone number search [/pages/payments/searchPayees.json]
+## Successful phone number search [/api/payments/searchPayees.json]
 ### Valid [GET]
 + Response 200 (application/json)
 
@@ -776,7 +804,7 @@ _eventId:
             "pageContent": null
         }
 
-## Unsuccessful phone number search [/pages/payments/searchPayees.json?mockId=2]
+## Unsuccessful phone number search [/api/payments/searchPayees.json?mockId=2]
 ### Valid [GET]
 + Response 200 (application/json)
 

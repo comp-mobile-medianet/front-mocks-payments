@@ -729,3 +729,60 @@ _eventId:
                 }
             }
         }
+
+
+# Group Search Payees
+
+Search for payees, either companies or people
+
+Form parameters: -
+
+_eventId:
+<ul>
+    <li>To add new company (not in the list): addNewPayee</li>
+    <li>To add existant company or person: addPayee</li>
+</ul>
+
+## List of companies [/pages/payments/searchCompany.json]
+
+        {
+            "status": "OK",
+            "pageContent": [
+                "COMCAST CABLE",
+                "COMCAST OPINION",
+                "COMCAST PARABELLUM"
+            ]
+        }
+
+## Empty list of companies [/pages/payments/searchCompany.json?mockId=2]
+
+        {
+            "status": "OK",
+            "pageContent": {
+                "empty": true
+            }
+        }
+
+## Successful phone number search [/pages/payments/searchPayees.json]
+
+        {
+            "status": "OK",
+            "pageContent": null
+        }
+
+## Unsuccessful phone number search [/pages/payments/searchPayees.json?mockId=2]
+
+        {
+            "status": "ERROR",
+            "alerts": [
+                {
+                    "type": "ERROR",
+                    "alert": [
+                        {
+                            "text": "No user registered with this number",
+                            "field": ""
+                        }
+                    ]
+                }
+            ]
+        }

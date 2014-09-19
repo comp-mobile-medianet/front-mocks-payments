@@ -520,7 +520,7 @@ _eventId:
                         "description":"BBVA - Personal Checking",
                         "accountNickName":"Cuenta BBVA",
                         "accountLast4": "1234",
-                        "availableBal": 6000
+                        "availableBal": 6000,
                         "postedBal": 6000
                     }
                 ],
@@ -744,6 +744,8 @@ _eventId:
 </ul>
 
 ## List of companies [/pages/payments/searchCompany.json]
+### Valid [GET]
++ Response 200 (application/json)
 
         {
             "status": "OK",
@@ -755,6 +757,8 @@ _eventId:
         }
 
 ## Empty list of companies [/pages/payments/searchCompany.json?mockId=2]
+### Valid [GET]
++ Response 200 (application/json)
 
         {
             "status": "OK",
@@ -764,6 +768,8 @@ _eventId:
         }
 
 ## Successful phone number search [/pages/payments/searchPayees.json]
+### Valid [GET]
++ Response 200 (application/json)
 
         {
             "status": "OK",
@@ -771,6 +777,8 @@ _eventId:
         }
 
 ## Unsuccessful phone number search [/pages/payments/searchPayees.json?mockId=2]
+### Valid [GET]
++ Response 200 (application/json)
 
         {
             "status": "ERROR",

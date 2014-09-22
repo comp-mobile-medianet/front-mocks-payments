@@ -766,11 +766,7 @@ Search for payees, either companies or people
 
 Form parameters: -
 
-_eventId:
-<ul>
-    <li>To add new company (not in the list): addNewPayee</li>
-    <li>To add existant company or person: addPayee</li>
-</ul>
+_eventId: searchPayee
 
 ## Successful phone number search [/api/payments/searchPayees.json]
 ### Valid [GET]
@@ -808,18 +804,19 @@ Shows the enrollment form
 
 Form parameters:
 <ul>
-   <li>phoneNumber</li>
+   <li>name</li>
    <li>nickname</li>
    <li>address</li>
-   <li>city</li>
-   <li>zipCode</li>
-   <li>state</li>
    <li>accountNumber</li>
    <li>accountNumberConfirm</li>
 </ul>
 
     
-_eventId: addPayee
+_eventId:
+<ul>
+    <li>To add new company (not in the list): addNewPayee</li>
+    <li>To add existant company or person: addPayee</li>
+</ul>
 
 ## Correct answer [/pages/payments/addCompany.json]
 ### Activate [GET]

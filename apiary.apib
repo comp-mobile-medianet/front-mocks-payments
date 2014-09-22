@@ -759,6 +759,7 @@ _eventId: addPayee
             "flowExecutionUrl": "/api/payments/searchPayees.json?mockId=2&_eventId=addPayee"
         }
 
+
 # Group Search Payees
 
 Search for payees, either companies or people
@@ -770,30 +771,6 @@ _eventId:
     <li>To add new company (not in the list): addNewPayee</li>
     <li>To add existant company or person: addPayee</li>
 </ul>
-
-## List of companies [/api/payments/searchCompany.json]
-### Valid [GET]
-+ Response 200 (application/json)
-
-        {
-            "status": "OK",
-            "pageContent": [
-                "COMCAST CABLE",
-                "COMCAST OPINION",
-                "COMCAST PARABELLUM"
-            ]
-        }
-
-## Empty list of companies [/api/payments/searchCompany.json?mockId=2]
-### Valid [GET]
-+ Response 200 (application/json)
-
-        {
-            "status": "OK",
-            "pageContent": {
-                "empty": true
-            }
-        }
 
 ## Successful phone number search [/api/payments/searchPayees.json]
 ### Valid [GET]
@@ -823,3 +800,58 @@ _eventId:
             ],
             "flowExecutionUrl": "/api/payments/searchPayees.json?_eventId=searchPayees"
         }
+
+
+# Group Add Company
+
+Shows the enrollment form
+
+Form parameters:
+<ul>
+   <li>phoneNumber</li>
+   <li>nickname</li>
+   <li>address</li>
+   <li>city</li>
+   <li>zipCode</li>
+   <li>state</li>
+   <li>accountNumber</li>
+   <li>accountNumberConfirm</li>
+</ul>
+
+    
+_eventId: addPayee
+
+## Correct answer [/pages/payments/addCompany.json]
+### Activate [GET]
++ Response 200 (application/json)
+
+        {
+            "alerts": null, 
+            "pageContent": null,
+            "flowExecutionUrl": "/api/payments/searchCompany.json?mockId=2&_eventId=addPayee"
+        }
+
+## List of companies [/api/payments/searchCompany.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "pageContent": [
+                "COMCAST CABLE",
+                "COMCAST OPINION",
+                "COMCAST PARABELLUM"
+            ]
+        }
+
+## Empty list of companies [/api/payments/searchCompany.json?mockId=2]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "pageContent": {
+                "empty": true
+            }
+        }
+

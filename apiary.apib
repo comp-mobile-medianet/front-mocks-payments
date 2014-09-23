@@ -775,7 +775,7 @@ _eventId: searchPayee
         {
             "status": "OK",
             "pageContent": null,
-            "flowExecutionUrl": "/api/payments/searchPayees.json?_eventId=addPayee"
+            "flowExecutionUrl": "/api/payments/addPayee.json?_eventId=addPayee"
         }
 
 ## Unsuccessful phone number search [/api/payments/searchPayees.json?mockId=2]
@@ -798,6 +798,15 @@ _eventId: searchPayee
             "flowExecutionUrl": "/api/payments/searchPayees.json?_eventId=searchPayees"
         }
 
+## Successful add payee [/api/payments/addPayee.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "status": "OK",
+            "pageContent": null,
+            "flowExecutionUrl": "/pages/payments/managePayees.html?_eventId=complete"
+        }
 
 # Group Add Company
 

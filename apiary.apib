@@ -136,7 +136,8 @@ _eventId:
 
         {
             "header": {
-                "showMenu": true
+                "showMenu": true,
+                "title": "New Bill Payment"
             },
             "pageContent": {
                 "empty": false,
@@ -248,6 +249,43 @@ _eventId:
                         "fromAccount":{
                             "description":"comcast",
                             "accountLast4":"0489"
+                        }
+                    }
+                ]
+            },
+            "flowExecutionUrl": "/api/payments/extendedDetail.json?execution=e1s1"
+        }
+
+## Payment confirmation [/pages/payments/detail.json?mockId=makePayment]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "modal": true,
+                "title": "New Bill Payment"
+            },
+            "pageContent": {
+                "empty": false,
+                "activePaymentIndex": "3",
+                "payments": [
+                    {
+                        "transactionId": "34864586422",
+                        "status": "PENDING",
+                        "date": 12351141411,
+                        "effectiveDate": 12351141411,
+                        "description": "SPCA of Texas",
+                        "totalAmount": 100,
+                        "amount": 100,
+                        "feeAmount": 0,
+                        "detailAvailable": true,
+                        "paymentMethod": "Electronic",
+                        "confirmationNumber": "CWETQ-QERRW",
+                        "payeeAccountNumber": "625235622",
+                        "fromAccount":{
+                            "description":"checking",
+                            "accountLast4":"2705"
                         }
                     }
                 ]

@@ -588,6 +588,74 @@ _eventId:
             }
         }
 
+## Make Payment one account [/pages/payments/makePayment.json?mockId=oneaccount]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "empty": false,
+                "accounts":[
+                    {
+                        "group": "J",
+                        "elements": [
+                            {
+                                "key":"123456789",
+                                "description":"BBVA - Personal Checking",
+                                "accountNickName":"Johnny",
+                                "accountLast4":"5566",
+                                "availableBal": 11000,
+                                "postedBal": 11000
+                            }
+                        ]
+                    }
+                ],
+                "to": [
+                    {
+                        "group": "J",
+                        "elements": [
+                            {
+                                "accountLast4": "6133",
+                                "payeeId": "241",
+                                "payeeName": "James Bond",
+                                "payeeNickName": "bond007",
+                                "minDate": "2014-09-19" 
+                            }
+                        ]
+                    },
+                    {
+                        "group": "S",
+                        "elements": [
+                            {
+                                "accountLast4": "5566",
+                                "payeeId": "166259",
+                                "payeeName": "Steve",
+                                "payeeNickName": "Vaugh",
+                                "minDate": "2014-09-26" 
+                            },
+                            {
+                                "accountLast4": "9282",
+                                "payeeId": "156123",
+                                "payeeName": "Steve",
+                                "payeeNickName": "McQueen",
+                                "minDate": "2014-09-30" 
+                            },
+                            {
+                                "accountLast4": "6132",
+                                "payeeId": "223422",
+                                "payeeName": "Steve",
+                                "payeeNickName": "Rogers",
+                                "minDate": "2014-09-16" 
+                            }
+                        ]
+                    }
+                ] 
+            }
+        }
+
 ## Edit make payment [/pages/payments/makePayment.json?mockId=editable]
 ### Valid [GET]
 + Response 200 (application/json)

@@ -1024,9 +1024,28 @@ _eventId:
         {
             "status": "OK",
             "pageContent": [
-                "COMCAST CABLE",
-                "COMCAST OPINION",
-                "COMCAST PARABELLUM"
+                {
+                    "payeeName": "COMCAST CABLE",
+                    "addressOnFile": true,
+                    "merchantZipRequired": false
+                }, {
+                    "payeeName": "COMCAST OPINION",
+                    "addressOnFile": false,
+                    "address":{
+                        "street":"311 PETERSON CIR",
+                        "city":"GARDENDALE",
+                        "state":"FL",
+                        "zipCode":"35071",
+                        "fourZIPCode":"2740"
+                    },
+                    "phoneNumber": 7854695623,
+                    "merchantZipRequired": true
+                }, {
+                    "payeeName": "COMCAST PARABELLUM",
+                    "addressOnFile": false,
+                    "merchantZipRequired": true
+                }
+
             ],
             "flowExecutionUrl": "/api/payments/addPayee.json?_eventId=addPayee"
         }

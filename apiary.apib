@@ -728,6 +728,37 @@ _eventId:
             }
         }
         
+# Group Make Payment Detail
+
+Make Payment Detail
+
+
+## Make Payment Detail [/pages/payments/makePaymentDetail.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "date": 1410904800000,
+                "from": {
+                    "description": "Checking",
+                    "accountLast4": "6423"
+                }, 
+                 "to": {
+                    "description": "SPCA of Texas",
+                    "accountLast4": null,
+                    "payeeType": "company"
+                },
+                "totalAmount": 100,
+                "amount": 100,
+                "feeAmount": 0,
+                "paymentMethod": "Electronic"
+            }
+        }
+        
 # Group Manage Payees
 
 Manage Pay Accounts

@@ -516,32 +516,32 @@ _eventId:
             "pageContent": {
                 "empty": false,
                 "accounts":[
-                    {
-                        "key":"123456789",
-                        "description":"BBVA - Personal Checking",
-                        "accountNickName":"Johnny",
-                        "accountLast4":"5566",
-                        "availableBal": 11000,
-                        "postedBal": 11000
-                    },
-                    {
-                        "key":"234567891",
-                        "description":"BBVA - Personal Checking",
-                        "accountNickName":"Cuenta BBVA",
-                        "accountLast4": "1561",
-                        "availableBal": 1500,
-                        "postedBal": 1500
-                    },
-                    {
-                        "key":"1222",
-                        "description":"BBVA - Personal Checking",
-                        "accountNickName":"Cuenta BBVA",
-                        "accountLast4": "1234",
-                        "availableBal": 6000,
-                        "postedBal": 6000
-                    }
-                ],
-                "to": [
+            {
+                "key":"123456789",
+                "description":"BBVA - Personal Checking",
+                "accountNickName":"Johnny",
+                "accountLast4":"5566",
+                "availableBal": 11000,
+                "postedBal": 11000
+            },
+            {
+                "key":"234567891",
+                "description":"BBVA - Personal Checking",
+                "accountNickName":"Cuenta BBVA",
+                "accountLast4": "1561",
+                "availableBal": 1500,
+                "postedBal": 1500
+            },
+            {
+                "key":"1222",
+                "description":"BBVA - Personal Checking",
+                "accountNickName":"Cuenta BBVA",
+                "accountLast4": "1234",
+                "availableBal": 6000,
+                "postedBal": 6000
+            }
+        ],
+        "to": [
                     {
                         "accountLast4": "6133",
                         "accountNumber": "8767998767-1",
@@ -549,10 +549,12 @@ _eventId:
                         "payeeName": "James Bond",
                         "payeeNickName": "bond007",
                         "payeeType": "COMPANY",
-                        "minDate": "2015-02-04",
-                        "feePayment": true,
-                        "feeLimitDate": "2015-02-10",
-                        "feeLimitAmount": 3.00
+                        "minDate": "2015-06-12",
+                        "ebillAvailable": true,
+                        "ebill": {
+                            "date": "2015-06-15",
+                            "amount": 50
+                        }
                     },
                     {
                         "accountLast4": "5566",
@@ -561,11 +563,15 @@ _eventId:
                         "payeeNickName": "Vaugh",
                         "phoneNumber": "5555555555",
                         "payeeType": "CUSTOMER",
-                        "minDate": "2014-09-26",
+                        "isExpeditedPayment": true,
+                        "minDate": "2015-06-16",
+                        "feePayment": true,
+                        "feeLimitDate": "2015-06-12",
+                        "feeLimitAmount": 15.00,
                         "ebillAvailable": true,
                         "ebill": {
-                            "date": "2014-12-12",
-                            "amount": 50
+                            "date": "2015-06-18",
+                            "amount": 150
                         }
                     },
                     {
@@ -575,18 +581,26 @@ _eventId:
                         "payeeNickName": "McQueen",
                         "phoneNumber": "5555555555",
                         "payeeType": "CUSTOMER",
-                        "minDate": "2014-09-30" 
+                        "isExpeditedPayment": true,
+                        "minDate": "2015-06-15",
+                        "feePayment": true,
+                        "feeLimitDate": "2015-06-12",
+                        "feeLimitAmount": 10.00 
                     },
                     {
                         "accountLast4": "6132",
                         "payeeId": "223422",
                         "payeeName": "Steve",
                         "payeeNickName": "Rogers",
-                        "minDate": "2014-09-16",
+                        "minDate": "2015-06-19",
                         "accountNumber": "6799877-1",
-                        "payeeType": "COMPANY"
+                        "payeeType": "COMPANY",
+                        "isOvernightCheck": true,
+                        "feePayment": true,
+                        "feeLimitDate": "2015-06-17",
+                        "feeLimitAmount": 4.00
                     }
-                ] 
+                ]  
             }
         }
 
@@ -616,12 +630,9 @@ _eventId:
                         "payeeId": "166259",
                         "payeeName": "Steve",
                         "payeeNickName": "Vaugh",
-                        "minDate": "2014-09-26",
-                        "ebillEnabled": true,
-                        "ebill": {
-                            "date": "2014-12-16",
-                            "amount": 150
-                        } 
+                        "phoneNumber": "5555555555",
+                        "payeeType": "CUSTOMER",
+                        "minDate": "2015-06-16"
                     }
                 ] 
             }
@@ -662,40 +673,62 @@ _eventId:
                 "to": [
                     {
                         "accountLast4": "6133",
+                        "accountNumber": "8767998767-1",
                         "payeeId": "241",
                         "payeeName": "James Bond",
                         "payeeNickName": "bond007",
-                        "minDate": "2014-09-19"
+                        "payeeType": "COMPANY",
+                        "isOvernightCheck": true,
+                        "minDate": "2015-06-12",
+                        "feePayment": true,
+                        "feeLimitDate": "2015-06-10",
+                        "feeLimitAmount": 3.00
                     },
                     {
                         "accountLast4": "5566",
                         "payeeId": "166259",
                         "payeeName": "Steve",
                         "payeeNickName": "Vaugh",
-                        "minDate": "2014-09-26"
+                        "phoneNumber": "5555555555",
+                        "payeeType": "CUSTOMER",
+                        "isExpeditedPayment": true,
+                        "minDate": "2015-06-16",
+                        "feePayment": true,
+                        "feeLimitDate": "2015-06-12",
+                        "feeLimitAmount": 15.00
                     },
                     {
                         "accountLast4": "9282",
                         "payeeId": "156123",
                         "payeeName": "Steve",
                         "payeeNickName": "McQueen",
-                        "minDate": "2014-09-30",
+                        "phoneNumber": "5555555555",
+                        "payeeType": "CUSTOMER",
+                        "isExpeditedPayment": true,
+                        "minDate": "2015-06-15",
                         "feePayment": true,
-                        "feeLimitDate": "2015-02-10",
-                        "feeLimitAmount": 3.00
+                        "feeLimitDate": "2015-06-12",
+                        "feeLimitAmount": 10.00 
                     },
                     {
                         "accountLast4": "6132",
                         "payeeId": "223422",
                         "payeeName": "Steve",
                         "payeeNickName": "Rogers",
-                        "minDate": "2014-09-16"
+                        "minDate": "2015-06-19",
+                        "accountNumber": "6799877-1",
+                        "payeeType": "COMPANY",
+                        "isOvernightCheck": true,
+                        "feePayment": true,
+                        "feeLimitDate": "2015-06-17",
+                        "feeLimitAmount": 4.00
                     }
                 ],
                 "userSelections": {
                     "fromAccount": "234567891",
                     "payeeId": "156123",
                     "amount": 300.00,
+                    "payDate": "expedited",
                     "date": 1422435999714
                 }
             }

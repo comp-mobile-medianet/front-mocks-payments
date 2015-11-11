@@ -100,6 +100,52 @@ _eventId:
                 ]
             }
         }
+        
+## One payment [/pages/payments/list.json?mockId=onePayment]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "crm": {
+               "imageUrls": {
+                    "def": "http://dev.medianet.es/compass-mobile/css/img/imageName.png",
+                    "at2x": "http://dev.medianet.es/compass-mobile/css/img/imageName.@2x.png",
+                    "hdpi": "http://dev.medianet.es/compass-mobile/css/img/imageName.hdpi.png",
+                    "xhdpi": "http://dev.medianet.es/compass-mobile/css/img/imageName.xhdpi.png",
+                    "xxhdpi": "http://dev.medianet.es/compass-mobile/css/img/imageName.xxhdpi.png"
+                },
+               "closeable": true,
+               "location": "PAYMENTS"
+            },
+            "iwantto": {
+                "size": 3
+            },
+            "user": {
+                "hasBillPaySelected": false
+            },
+           "pageContent": {
+                "validUser": true,
+                "empty": false,
+                "sortInfo": {
+                    "criteria": 0,
+                    "ascendant": false
+                },
+                "payments": [
+                    {
+                        "transactionId": "1234",
+                        "status": "PENDING",
+                        "date": 12351141411,
+                        "description": "SPCA of Texas",
+                        "amount": 100
+                    }
+                ]
+            }
+        }
+
 
 ## Empty Payments [/pages/payments/list.json?mockId=empty]
 ### Valid [GET]
